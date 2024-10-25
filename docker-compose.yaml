@@ -1,10 +1,19 @@
 services:
   fastapi:
-    build: ./api
+    build:
+      context: ./code/deployment/api
+      dockerfile: Dockerfile
     ports:
       - 8000:8000
+    volumes:
+      - ./code/deployment/api:/app
+      - ./data/best.keras:/app/best.keras
 
   app:
-    build: ./app
+    build:
+      context: ./code/deployment/app
+      dockerfile: Dockerfile
     ports:
       - 8502:8501
+    volumes:
+      - ./code/deployment/app:/app2

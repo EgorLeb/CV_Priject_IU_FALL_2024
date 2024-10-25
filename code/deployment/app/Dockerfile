@@ -1,6 +1,5 @@
-FROM python:3.8.10
-WORKDIR /app
-COPY . .
+FROM python:3.10.10
+WORKDIR /app2
 
 RUN pip install streamlit
 

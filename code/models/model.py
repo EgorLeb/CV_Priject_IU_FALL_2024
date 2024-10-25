@@ -6,7 +6,7 @@ import warnings; warnings.filterwarnings('ignore')
 def get_model():
     model = Sequential()
 
-    model.add(Conv2D(8, (5, 5), padding='same'))
+    model.add(Conv2D(8, (5, 5), padding='same', input_shape=(32, 32, 3)))
     model.add(LeakyReLU(alpha=.025))
     model.add(MaxPooling2D(pool_size=(2, 2)))
     model.add(Dropout(.1))
