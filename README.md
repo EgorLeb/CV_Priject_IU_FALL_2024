@@ -1,36 +1,53 @@
-# CV_Priject_IU_FALL_2024
+# Optical Character Recognition for Handwritten Russian Letters
+Optical Character Recognition (OCR) for Russian letters
+involves converting images of handwritten or printed Cyrillic
+text into machine-readable formats. In our project we will focus on developing CNN-like model
+for Russian OCR.
 
-В этом проекте использованы **Fastapi**, **Streamlit**. 
+# Model 
+![image](https://github.com/EgorLeb/CV_Priject_IU_FALL_2024/blob/main/assets/madel_desc.jpg)
 
-Внутри есть загруженная модель с весами, которая определит букву на изображении.
+# Deployment
 
-Сборка происходит через запуск **Docker-compose** файла.
+This project uses **Fastapi**, **Streamlit**. 
 
-## сборка
+Inside there is a loaded model with weights that will determine the letter in the image.
+
+The build is done by running the **Docker-compose** file.
+
+## build.
 
 ```sudo docker compose build```
 
 ```sudo docker compose up```
 
-итоговое веб приложение будет находиться по адресу ```http://localhost:8502/```
+The final web application will be located at ```http://localhost:8502/``.
 
-## Папки
+## Folders
 
-```./api```
+```./api```.
 
-Fastapi приложение. Обрабатывает один базовый запрос для проверки подключения и один запрос на выгрузку фото через post запрос.
+Fastapi application. Handles one basic request to check connectivity and one request to upload a photo via post request.
 
 ```./app```
 
-Streamlit приложение. Принимает фото и отправляет в соседний контейнер на Fastapi, после принимает и выводит результат.
+Streamlit application. Receives a photo and sends it to a neighboring container on Fastapi, then receives and outputs the result.
 
-Также вилидирует входной файл и обрабатывает ошибки.
+Also vilidates the input file and handles errors.
 
-**Важно, при запусте приложения доступ осуществляется через порт 8502.** К Fastapi доступ стандартный, по 8000 порту.
+**Important, when running the application access is via port 8502.** Fastapi access is standard, on port 8000.
 ![image](https://github.com/user-attachments/assets/867d4e91-1f41-4d28-9dad-ccb34f4d07e2)
 
 ![image](https://github.com/user-attachments/assets/63672df4-5794-49cd-9d2d-2c5bc402de69)
 
-Кейс с неверным форматом
+Case with wrong file format
 
 ![image](https://github.com/user-attachments/assets/1882361f-d318-40b1-b9e2-6abcd2106cae)
+
+# Results and Evaluation
+After training the model, the following accuracy metrics
+were achieved:
+
+- Training Accuracy: 0.9096
+- Validation Accuracy: 0.9056
+- Test Accuracy: 0.8843
