@@ -18,11 +18,13 @@ def predict(file, predicting_model):
     return letters[tmp.argmax()]
 
 
+# just check the connection
 @app.get('/')
 def root():
     return {'message': 'Hello World'}
 
 
+# upload the file and return the letter
 @app.post("/upload")
 def upload(file: UploadFile = File(...)):
     try:
