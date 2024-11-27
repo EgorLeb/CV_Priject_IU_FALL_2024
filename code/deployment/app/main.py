@@ -5,6 +5,7 @@ import requests
 st.title('Letter recognition')
 cols = st.columns(2)
 uploaded_file = None
+
 with cols[0] as col:
     uploaded_file = st.file_uploader("")
     if uploaded_file:
@@ -12,6 +13,7 @@ with cols[0] as col:
         if len(s) >= 2 and s[-1] in ["jpeg", "png", "jpg"]:
             bytes_data = uploaded_file.getvalue()
             st.image(bytes_data, uploaded_file.name)
+
 with cols[1] as col:
     if uploaded_file:
         s = uploaded_file.name.split(".")
